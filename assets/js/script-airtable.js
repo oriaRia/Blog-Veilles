@@ -131,7 +131,7 @@ base('Table 1').find('recWPZC2pwUCiTaJ4', function (err, record) {
 //Pagination
 function pagination()
 {
-    var items = $(".projects .card"); // #list .items c'est l'endroit où tes cartes sont stocké dans le html
+    var items = $(".projects .item"); // #list .items c'est l'endroit où tes cartes sont stocké dans le html
             var numItems = items.length; // ne change pas cela
             var perPage = 6; // c'est la variable qui gère le nombre d'item par page
 
@@ -149,4 +149,9 @@ function pagination()
                 }
             });
 }
-pagination();
+
+
+setTimeout(function()
+{ 
+    pagination();
+}, 3000);
