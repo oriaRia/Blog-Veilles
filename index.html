@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Accueil Mes Veilles</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/back-to-top-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/Projects-Clean.css">
+    <link rel="stylesheet" href="assets/css/style1.css">
+</head>
+
+<body>
+    <!--la navbar doit se transformer en burger (collapse) pour la version mobile-->
+    <nav class="navbar navbar-light navbar-expand-md fixed-top shadow-sm navigation-clean-search">
+        <div class="container"><a class="navbar-brand" href="#index.html">Orianne</a><button data-toggle="collapse"
+                class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item text-right" role="presentation"></li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                            aria-expanded="false" href="#">2019</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation"
+                                href="javascript:recupereVeille('Octobre 2019');">Octobre</a>
+                            <a class="dropdown-item" role="presentation"
+                                href="javascript:recupereVeille('Novembre 2019');">Novembre</a>
+                            <a class="dropdown-item" role="presentation"
+                                href="javascript:recupereVeille('Décembre 2019');">Decembre</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                            aria-expanded="false" href="#">2020&nbsp;</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation"
+                                href="javascript:recupereVeille('Janvier 2020');">Janvier</a>
+                            <a class="dropdown-item" role="presentation"
+                                href="javascript:recupereVeille('Fevrier 2020');">Fevrier</a>
+                            <a class="dropdown-item" role="presentation"
+                                href="javascript:recupereVeille('Mars 2020');">Mars</a>
+                        </div>
+                    </li>
+                </ul>
+                <!-- bouton de recherche par mots clés-->
+                <form class="form-inline mr-auto" target="_self">
+                    <div class="form-group text-monospace border rounded-0 border-secondary shadow-sm"><label
+                            for="search-field"><i class="fa fa-search"></i></label><input
+                            class="form-control search-field" type="search" id="search-field" name="search"></div>
+                </form><a class="btn btn-light action-button" role="button" href="#">Rechercher</a>
+            </div>
+        </div>
+    </nav>
+    <!-- présentation de la page d'accueil-->
+    <main class="page lanidng-page">
+        <section class="portfolio-block block-intro" style="padding: 50px 50px 20px 50px;">
+            <div class="container">
+                <div class="avatar" style="background-image: url(&quot;assets/img/avatars/avatar1.jpg&quot;);"></div>
+                <div class="about-me">
+                    <p>Ma veille informationnelle me permet de rester informé des évolutions du marché digital, qu'il
+                        s'agisse de règlementation, d'innovation, des nouvelles tendances en Polynésie ou ailleurs !</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--coprs du site avec les card présentation des articles-->
+    <div class="projects-clean">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center" style="font-size: 27px;padding: 10px 0;">Les articles de veille informationnelle
+                </h2>
+            </div>
+            <div class="projects card">
+                <div class="row">
+                </div>
+                <!-- template dans le JS  -->
+            </div>
+            <div class="modal fade" id="article" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <!--pagination -->
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#" aria-label="Previous"><span
+                        aria-hidden="true">«</span></a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a>
+            </li>
+        </ul>
+    </nav><span class="fa fa-angle-up ir-arriba"> </span>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="links"><a id="contact" href="mailto:monmail@gmail.com">Contact me</a></div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/airtable.browser.js"></script>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="./assets/js/jquery.simplePagination.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/back-to-top-button.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="./assets/js/script-airtable.js"></script>
+</body>
+
+</html>

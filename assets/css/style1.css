@@ -1,0 +1,26 @@
+.pagination {
+  justify-content: center;
+}
+
+.portfolio-block.block-intro .avatar {
+  width: 350px;
+  height: 251px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.description {
+ height: 60px ;
+  overflow: hidden;
+}
+
+.modal-content {
+  width: 600px;
+}
+
+p {
+  text-justify: auto;
+}
